@@ -17,32 +17,38 @@ p.small-text {
     font-size: 18px;
 }
 
-.image-click img {
-    width: 150px;
-    cursor: pointer;
+#moving-text p {
+    position: absolute;
+    left: -200px;
+    animation: moveText 10s linear infinite;
 }
 
-#page1, #page2, #food-options {
-    display: none; /* Todos estarán ocultos al inicio */
-}
-
-/* Mostrar la primera página */
-#page1 {
-    display: block;
-}
-
-/* Animación de movimiento de texto */
+/* Animación de texto */
 @keyframes moveText {
     0% { left: -200px; }
     100% { left: 100%; }
 }
 
-#page1 p, #page2 p {
-    position: absolute;
-    animation: moveText 15s linear infinite;
+/* Estilo del botón rojo */
+.red-button {
+    background-color: red;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-/* Carta con sobre */
+/* Página 1 */
+#page1 {
+    display: block;
+}
+
+/* Página 2 */
+#page2 {
+    display: none;
+}
+
 .envelope {
     position: relative;
     display: inline-block;
@@ -86,15 +92,7 @@ p.small-text {
     margin-top: 30px;
 }
 
-.red-button {
-    background-color: red;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
+/* Opciones de comida */
 .food-option img {
     width: 100px;
     margin: 20px;
@@ -130,5 +128,4 @@ p.small-text {
 
 #love-quiz button:nth-child(2) {
     background-color: #f44336;
-    color: white;
-}
+    color
