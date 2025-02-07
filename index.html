@@ -6,36 +6,54 @@
     <title>Feliz San Valentín</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <!-- Página principal -->
-    <div id="main-page">
-        <h1>Feliz San Valentín</h1>
-        <div class="heart" onclick="goToMessagePage()"></div>
+<body class="crepe-background">
+    <!-- Página 1: Feliz San Valentín -->
+    <div id="page1">
+        <h1 class="cursive">Feliz San Valentín</h1>
+        <p class="small-text">Te amo</p>
+        <div class="image-click" onclick="goToSecondPage()">
+            <img src="https://via.placeholder.com/150" alt="Imagen clickeable">
+        </div>
     </div>
 
-    <!-- Página del mensaje -->
-    <div id="message-page" class="message">
-        <h2>Nubi y Triny</h2>
-        <img src="https://i.pinimg.com/736x/d7/44/5e/d7445ea7ecbbc75e45ba3070aee957d9.jpg" alt="Nubi y Triny" width="300">
-        <p>A pesar de los miles de kilómetros que nos separan, nunca he sentido la distancia como un obstáculo, porque de alguna manera siempre estás conmigo. Desde aquel día en que nos conocimos en ese juego, nuestras vidas se entrelazaron de una forma única, con nuestras pequeñas coincidencias que hacen que todo parezca cosa del destino.</p>
-        <p>Sé que no siempre es fácil, que a veces el tiempo y la distancia juegan en contra, pero aquí seguimos, porque lo que tenemos es real. Me encanta cómo, aunque ambos seamos un poco distraídos, siempre encontramos el camino de vuelta el uno al otro.</p>
-        <p>Eres increíble, Joyce, y quiero que este día lo recuerdes. No importa la distancia, mi cariño por ti siempre está presente. Te amo.</p>
-        
-        <!-- Cuadro rojo -->
-        <div class="red-box" onclick="goToFoodPage()">¿Quieres?</div>
+    <!-- Página 2: Carta -->
+    <div id="page2" class="hidden">
+        <div class="envelope">
+            <div class="heart" onclick="openEnvelope()"></div>
+            <div class="flap" id="flap"></div>
+            <div class="letter" id="letter">
+                <p>Feliz San Valentín, Nubi.</p>
+                <p>A pesar de los miles de kilómetros que nos separan, nunca he sentido la distancia como un obstáculo, porque de alguna manera siempre estás conmigo. Desde aquel día en que nos conocimos en ese juego, nuestras vidas se entrelazaron de una forma única, con nuestras pequeñas coincidencias que hacen que todo parezca cosa del destino.</p>
+                <p>Sé que no siempre es fácil, que a veces el tiempo y la distancia juegan en contra, pero aquí seguimos, porque lo que tenemos es real. Me encanta cómo, aunque ambos seamos un poco distraídos, siempre encontramos el camino de vuelta el uno al otro.</p>
+                <p>Eres increíble, Joyce, y quiero que este día lo recuerdes. No importa la distancia, mi cariño por ti siempre está presente. Te amo❤️</p>
+            </div>
+        </div>
+        <button class="red-button" onclick="goToFoodPage()">¿Quieres?</button>
     </div>
 
-    <!-- Página de opciones de comida -->
-    <div id="food-options" class="food-container">
-        <h2>Elige una comida 🍔🍟🍗☕</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Burger_King_logo_%281999%29.svg/768px-Burger_King_logo_%281999%29.svg.png" alt="Burger King" onclick="goToSite('https://www.burgerking.com')">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/190px-McDonald%27s_Golden_Arches.svg.png" alt="McDonald's" onclick="goToSite('https://www.mcdonalds.com')">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLeU3xdngy_d9y1OjZXAmEhuWGzDsa4rZLbw&s" onclick="goToSite('https://www.popeyes.com')">
-        <img src="https://prensa.kfc.es/wp-content/uploads/2022/10/favicon-512x512-1.png" alt="KFC" onclick="goToSite('https://www.kfc.com')">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSArIqizCzgXRgOhCkhNiIaJgBCJ2zCAGjK5w&s" alt="Starbucks" onclick="goToSite('https://www.starbucks.com')">
+    <!-- Página 3: Opciones de Comida -->
+    <div id="food-options" class="hidden">
+        <h2>¡Elige una comida!</h2>
+        <div class="food-option" onclick="goToSite('https://www.burgerking.com')">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Burger_King_logo_%281999%29.svg/768px-Burger_King_logo_%281999%29.svg.png" alt="Burger King">
+        </div>
+        <div class="food-option" onclick="goToSite('https://www.popeyes.com')">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLeU3xdngy_d9y1OjZXAmEhuWGzDsa4rZLbw&s" alt="Popeyes">
+        </div>
+        <div class="food-option" onclick="goToSite('https://www.kfc.com')">
+            <img src="https://prensa.kfc.es/wp-content/uploads/2022/10/favicon-512x512-1.png" alt="KFC">
+        </div>
+        <div class="food-option" onclick="goToSite('https://www.papajohns.com')">
+            <img src="https://www.papajohns.com/images/logo-new.svg" alt="Papa John's">
+        </div>
+
+        <div id="love-quiz">
+            <p>¿Me amas?</p>
+            <button onclick="loveQuiz('yes')">Sí</button>
+            <button onclick="loveQuiz('no')">No</button>
+        </div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
