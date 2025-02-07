@@ -1,140 +1,72 @@
-/* Fondo crepe */
-.crepe-background {
-    background-color: #f5e6cc;
-    font-family: Arial, sans-serif;
-    color: #333;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+body {
+    background-color: #f5e0c3; /* Crepe color */
+    font-family: 'Arial', sans-serif;
+    color: white;
 }
 
-h1.cursive {
-    font-size: 40px;
+.title {
+    font-size: 3em;
+    text-align: center;
     font-style: italic;
 }
 
-p.small-text {
-    font-size: 18px;
+.subtitle {
+    text-align: center;
+    font-size: 1.2em;
 }
 
-/* Texto moviéndose de izquierda a derecha */
-#moving-text p {
-    position: absolute;
-    left: -200px;
-    animation: moveText 10s linear infinite;
-}
-
-/* Animación de texto */
-@keyframes moveText {
-    0% { left: -200px; }
-    100% { left: 100%; }
-}
-
-/* Estilo del botón rojo */
-.red-button {
-    background-color: red;
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-}
-
-/* Página 1 */
-#page1 {
+.image-container img {
     display: block;
-}
-
-/* Página 2 */
-#page2 {
-    display: none;
-    position: relative;
-}
-
-/* Estilo del sobre y la carta */
-.envelope {
-    position: relative;
-    display: inline-block;
-    margin-top: 50px;
-}
-
-.heart {
-    width: 40px;
-    height: 40px;
-    background: red;
-    border-radius: 50%;
+    margin: 0 auto;
     cursor: pointer;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
-.flap {
+.page2 .envelope {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: #f5e0c3;
+    border: 3px solid #333;
+    margin: 50px auto;
+    border-radius: 10px;
+}
+
+.page2 .envelope-flap {
     width: 100%;
-    height: 100px;
-    background: #f0f0f0;
+    height: 50%;
+    background-color: #fff;
     position: absolute;
     top: 0;
     left: 0;
-    border-radius: 5px 5px 0 0;
-    transition: transform 1s;
+    border-bottom: 3px solid #333;
+    cursor: pointer;
 }
 
-.letter {
-    width: 80%;
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    display: block;
-    font-size: 18px;
+.page2 .heart {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 15px;
+    left: 15px;
 }
 
-/* Página de comida */
-.food-option img {
-    width: 100px;
+.message {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.restaurant-options img {
     margin: 20px;
     cursor: pointer;
-    animation: bounce 1s infinite;
 }
 
-@keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-/* Quiz de "¿Me amas?" */
-#love-quiz {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-#love-quiz button {
-    padding: 10px 20px;
+.love-question button {
     margin: 10px;
-    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #f00;
+    color: white;
     border: none;
-    border-radius: 5px;
-}
-
-#love-quiz button:nth-child(1) {
-    background-color: #4caf50;
-    color: white;
-}
-
-#love-quiz button:nth-child(2) {
-    background-color: #f44336;
-    color: white;
-}
-
-/* Página oculta */
-.hidden {
-    display: none;
+    cursor: pointer;
 }
