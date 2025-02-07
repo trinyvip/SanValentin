@@ -3,47 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz San Valentín</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>San Valentín</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1e0d6; /* Fondo color crepe */
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-style: italic;
+            margin-top: 50px;
+        }
+
+        .subheading {
+            font-size: 18px;
+        }
+
+        .heart-image {
+            cursor: pointer;
+            margin-top: 20px;
+            width: 100px;
+        }
+
+        /* Movimiento de texto */
+        .moving-text {
+            position: absolute;
+            top: 100px;
+            left: -300px;
+            font-size: 50px;
+            color: rgba(0, 0, 0, 0.1);
+            animation: moveText 10s linear infinite;
+        }
+
+        @keyframes moveText {
+            0% { left: -300px; }
+            50% { left: 100%; }
+            100% { left: -300px; }
+        }
+
+        /* Segunda Página: Carta animada */
+        .letter {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 400px;
+            background: #f5e1a4;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 1s ease-in-out;
+        }
+
+        .heart {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 50px;
+            color: red;
+            transition: transform 0.5s;
+        }
+
+        .letter.opened {
+            transform: scaleY(0) rotateX(90deg);
+        }
+
+        .letter.opened .heart {
+            transform: translateX(150px);
+        }
+
+        .message {
+            display: none;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .message.show {
+            display: block;
+        }
+
+        /* Página 3: Opciones de comida */
+        .food-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            gap: 20px;
+        }
+
+        .food-container img {
+            width: 100px;
+            cursor: pointer;
+            animation: bounce 1s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
+        }
+
+        .question {
+            margin-top: 30px;
+        }
+
+        .answer-btn {
+            padding: 10px 20px;
+            background: #f76c6c;
+            color: white;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .answer-btn:hover {
+            background: #f5b5b5;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .bear-dance {
+            display: none;
+            width: 100px;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Página 1 -->
-    <div class="page1">
-        <h1 class="title">Feliz San Valentín</h1>
-        <p class="subtitle">Te amo</p>
-        <div class="image-container" onclick="window.location.href='pagina2.html'">
-            <img src="your-image-placeholder.png" alt="Imagen para hacer clic">
-        </div>
-    </div>
 
-    <!-- Página 2 -->
-    <div class="page2">
-        <div class="envelope">
-            <div class="heart"></div>
-            <div class="envelope-flap"></div>
-        </div>
-        <div class="message" id="message">
+<!-- Primera Página -->
+<h1>Feliz San Valentín</h1>
+<p class="subheading">Te Amo ❤️</p>
+<img src="https://via.placeholder.com/150" alt="Imagen" class="heart-image" onclick="location.href='pagina2.html'">
+
+<!-- Texto en movimiento -->
+<div class="moving-text">Triny</div>
+
+<!-- Segunda Página -->
+<div id="pagina2" class="hidden">
+    <div class="letter" onclick="openLetter()">
+        <div class="heart">❤️</div>
+        <div class="message" id="mensaje">
             <p>Feliz San Valentín, Nubi.</p>
-            <p>A pesar de los miles de kilómetros que nos separan, nunca he sentido la distancia como un obstáculo...</p>
-            <button onclick="showNextPage()">¿Quieres?</button>
+            <p>A pesar de los miles de kilómetros...</p>
+            <p>Eres increíble, Joyce, y quiero que este día lo recuerdes. Te amo❤️</p>
         </div>
     </div>
+    <div id="btn1" class="question">
+        <button class="answer-btn" onclick="location.href='pagina3.html'">¿Quieres?</button>
+    </div>
+</div>
 
-    <!-- Página 3 -->
-    <div class="page3">
-        <h2>¿Qué quieres comer?</h2>
-        <div class="restaurant-options">
-            <img src="burgerking.png" onclick="window.location.href='https://www.burgerking.com'">
-            <img src="popeyes.png" onclick="window.location.href='https://www.popeyes.com'">
-            <img src="kfc.png" onclick="window.location.href='https://www.kfc.com'">
-            <img src="papajhons.png" onclick="window.location.href='https://www.papajohns.com'">
-        </div>
-        <div class="love-question">
-            <button onclick="respond('no')">No</button>
-            <button onclick="respond('yes')">Sí</button>
-        </div>
+<!-- Tercera Página -->
+<div id="pagina3" class="hidden">
+    <h2>Restaurantes</h2>
+    <div class="food-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Burger_King_logo_%281999%29.svg/768px-Burger_King_logo_%281999%29.svg.png" onclick="window.location.href='https://www.burgerking.com'">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/190px-McDonald%27s_Golden_Arches.svg.png" onclick="window.location.href='https://www.mcdonalds.com'">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLeU3xdngy_d9y1OjZXAmEhuWGzDsa4rZLbw&s" onclick="window.location.href='https://www.popeyes.com'">
+        <img src="https://prensa.kfc.es/wp-content/uploads/2022/10/favicon-512x512-1.png" onclick="window.location.href='https://www.kfc.com'">
     </div>
 
-    <script src="script.js"></script>
+    <div class="question">
+        <button class="answer-btn" onclick="showBear()">Sí</button>
+        <button class="answer-btn" onclick="showNo()">No</button>
+    </div>
+
+    <div id="bear" class="bear-dance">
+        <img src="https://via.placeholder.com/100" alt="Bear Dance">
+        <p>¡Yo sabía que me amabas! ❤️</p>
+    </div>
+
+    <div id="no-answer" class="hidden">
+        <p>(segura????)</p>
+        <button class="answer-btn" onclick="showOptions()">Sí</button>
+        <button class="answer-btn" onclick="showNoAgain()">No</button>
+    </div>
+</div>
+
+<script>
+    function openLetter() {
+        document.querySelector('.letter').classList.add('opened');
+        document.querySelector('#mensaje').classList.add('show');
+    }
+
+    function showBear() {
+        document.getElementById('bear').style.display = 'block';
+        document.getElementById('pagina3').style.display = 'none';
+    }
+
+    function showNo() {
+        document.getElementById('no-answer').classList.remove('hidden');
+    }
+
+    function showOptions() {
+        document.getElementById('no-answer').classList.add('hidden');
+    }
+
+    function showNoAgain() {
+        alert("De verdad no me amas :( ?");
+        document.getElementById('no-answer').classList.add('hidden');
+    }
+</script>
+
 </body>
 </html>
