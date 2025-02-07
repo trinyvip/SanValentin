@@ -4,220 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feliz San Valentín</title>
-    <style>
-        body {
-            background-color: #f5e1b7;
-            font-family: Arial, sans-serif;
-            color: black;
-            text-align: center;
-            position: relative;
-        }
-        h1 {
-            font-size: 40px;
-            font-style: italic;
-            margin-top: 20%;
-            animation: moveText 10s linear infinite;
-        }
-        @keyframes moveText {
-            0% { transform: translateX(0); }
-            50% { transform: translateX(50px); }
-            100% { transform: translateX(0); }
-        }
-        .heart {
-            width: 100px;
-            height: 100px;
-            background: url('https://upload.wikimedia.org/wikipedia/commons/2/27/Red_heart.png') no-repeat center;
-            background-size: contain;
-            margin: 30px auto;
-            animation: heartBeat 1s ease-in-out infinite;
-            cursor: pointer;
-        }
-        @keyframes heartBeat {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-        .message {
-            display: none;
-            margin-top: 20px;
-            font-size: 20px;
-            font-style: italic;
-            animation: fadeIn 2s;
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-        .message.show {
-            display: block;
-        }
-        .envelope {
-            width: 250px;
-            height: 150px;
-            background-color: #f4c2c2;
-            margin: 0 auto;
-            position: relative;
-            cursor: pointer;
-        }
-        .envelope:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 50%;
-            background-color: #fff;
-            transform-origin: 50% 100%;
-            transform: rotateX(-180deg);
-            transition: transform 0.5s;
-        }
-        .envelope.open:before {
-            transform: rotateX(0deg);
-        }
-        .heart-small {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 30px;
-            height: 30px;
-            background: url('https://upload.wikimedia.org/wikipedia/commons/2/27/Red_heart.png') no-repeat center;
-            background-size: contain;
-            transform: translate(-50%, -50%);
-            animation: moveHeartSmall 1s ease-in-out infinite;
-        }
-        @keyframes moveHeartSmall {
-            0% { transform: translate(-50%, -50%) translateY(0); }
-            50% { transform: translate(-50%, -50%) translateY(-10px); }
-            100% { transform: translate(-50%, -50%) translateY(0); }
-        }
-        .food-container {
-            display: none;
-            margin-top: 20px;
-        }
-        .food-container img {
-            width: 150px;
-            margin: 10px;
-            cursor: pointer;
-            animation: bounce 0.5s alternate infinite;
-        }
-        @keyframes bounce {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
-        }
-        .food-container.show {
-            display: block;
-        }
-        .button-yes-no {
-            position: fixed;
-            bottom: 10%;
-            right: 10%;
-            background-color: red;
-            padding: 10px 20px;
-            color: white;
-            cursor: pointer;
-            font-size: 18px;
-        }
-        .button-yes-no span {
-            margin: 0 10px;
-            cursor: pointer;
-        }
-        .button-yes-no.show {
-            display: block;
-        }
-        .hidden {
-            display: none;
-        }
-        .dancing-bear {
-            display: none;
-            position: fixed;
-            bottom: 10%;
-            left: 10%;
-            width: 100px;
-        }
-        .dancing-bear img {
-            width: 100%;
-            animation: dance 1s ease-in-out infinite;
-        }
-        @keyframes dance {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0); }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
     <!-- Página 1 -->
-    <h1>Feliz San Valentín</h1>
-    <p style="font-size: 20px; font-style: italic;">Te amo</p>
-    <div class="heart" onclick="goToMessagePage()"></div>
+    <div class="page1">
+        <h1 class="title">Feliz San Valentín</h1>
+        <p class="subtitle">Te amo</p>
+        <div class="image-container" onclick="window.location.href='pagina2.html'">
+            <img src="your-image-placeholder.png" alt="Imagen para hacer clic">
+        </div>
+    </div>
 
     <!-- Página 2 -->
-    <div id="message-page" class="message">
-        <h2>Feliz San Valentín, Nubi.</h2>
-        <div class="envelope" onclick="openEnvelope()">
-            <div class="heart-small"></div>
+    <div class="page2">
+        <div class="envelope">
+            <div class="heart"></div>
+            <div class="envelope-flap"></div>
         </div>
-        <p>A pesar de los miles de kilómetros que nos separan, nunca he sentido la distancia como un obstáculo, porque de alguna manera siempre estás conmigo. Desde aquel día en que nos conocimos en ese juego, nuestras vidas se entrelazaron de una forma única, con nuestras pequeñas coincidencias que hacen que todo parezca cosa del destino.</p>
-        <p>Sé que no siempre es fácil, que a veces el tiempo y la distancia juegan en contra, pero aquí seguimos, porque lo que tenemos es real. Me encanta cómo, aunque ambos seamos un poco distraídos, siempre encontramos el camino de vuelta el uno al otro.</p>
-        <p>Eres increíble, Joyce, y quiero que este día lo recuerdes. No importa la distancia, mi cariño por ti siempre está presente. Te amo ❤️</p>
-        <button onclick="goToFoodPage()">¿Quieres?</button>
+        <div class="message" id="message">
+            <p>Feliz San Valentín, Nubi.</p>
+            <p>A pesar de los miles de kilómetros que nos separan, nunca he sentido la distancia como un obstáculo...</p>
+            <button onclick="showNextPage()">¿Quieres?</button>
+        </div>
     </div>
 
-    <!-- Página 3 (Restaurantes) -->
-    <div id="food-options" class="food-container">
-        <h2>Elige una comida 🍔🍟🍗☕</h2>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Burger_King_logo_%281999%29.svg/768px-Burger_King_logo_%281999%29.svg.png" alt="Burger King" onclick="goToSite('https://www.burgerking.com')">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/190px-McDonald%27s_Golden_Arches.svg.png" alt="McDonald's" onclick="goToSite('https://www.mcdonalds.com')">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLeU3xdngy_d9y1OjZXAmEhuWGzDsa4rZLbw&s" onclick="goToSite('https://www.popeyes.com')">
-        <img src="https://prensa.kfc.es/wp-content/uploads/2022/10/favicon-512x512-1.png" alt="KFC" onclick="goToSite('https://www.kfc.com')">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSArIqizCzgXRgOhCkhNiIaJgBCJ2zCAGjK5w&s" alt="Starbucks" onclick="goToSite('https://www.starbucks.com')">
+    <!-- Página 3 -->
+    <div class="page3">
+        <h2>¿Qué quieres comer?</h2>
+        <div class="restaurant-options">
+            <img src="burgerking.png" onclick="window.location.href='https://www.burgerking.com'">
+            <img src="popeyes.png" onclick="window.location.href='https://www.popeyes.com'">
+            <img src="kfc.png" onclick="window.location.href='https://www.kfc.com'">
+            <img src="papajhons.png" onclick="window.location.href='https://www.papajohns.com'">
+        </div>
+        <div class="love-question">
+            <button onclick="respond('no')">No</button>
+            <button onclick="respond('yes')">Sí</button>
+        </div>
     </div>
 
-    <!-- Botones de Sí y No -->
-    <div id="yes-no" class="button-yes-no hidden">
-        <span onclick="chooseYes()">Sí</span>
-        <span onclick="chooseNo()">No</span>
-    </div>
-
-    <!-- Osito Bailando -->
-    <div id="dancing-bear" class="dancing-bear">
-        <img src="https://i.pinimg.com/originals/4b/97/67/4b9767f02d231e5fc94d13d42d8d7b2a.gif" alt="Osito Bailando">
-    </div>
-
-    <script>
-        function goToMessagePage() {
-            document.querySelector('h1').style.display = 'none';
-            document.querySelector('.heart').style.display = 'none';
-            document.querySelector('#message-page').classList.add('show');
-        }
-
-        function openEnvelope() {
-            document.querySelector('.envelope').classList.add('open');
-        }
-
-        function goToFoodPage() {
-            document.querySelector('#message-page').classList.remove('show');
-            document.querySelector('#food-options').classList.add('show');
-        }
-
-        function goToSite(url) {
-            window.location.href = url;
-        }
-
-        function chooseYes() {
-            document.querySelector('#dancing-bear').style.display = 'block';
-            document.querySelector('#yes-no').style.display = 'none';
-            alert('¡Yo sabía que me amabas! ❤️');
-        }
-
-        function chooseNo() {
-            let response = prompt('¿Segura???');
-            if (response.toLowerCase() === 'no') {
-                alert('De verdad no me amas? :( plsssss');
-            }
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
