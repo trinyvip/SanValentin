@@ -7,13 +7,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="crepe-background">
-    <!-- Página 1: Feliz San Valentín -->
+    <!-- Página 1 -->
     <div id="page1">
         <h1 class="cursive">Feliz San Valentín</h1>
         <p class="small-text">Te amo</p>
-        <div class="image-click" onclick="goToSecondPage()">
-            <img src="https://via.placeholder.com/150" alt="Imagen clickeable">
+        <div class="image-click">
+            <img src="https://via.placeholder.com/150" alt="Imagen clickeable" onclick="goToSecondPage()">
         </div>
+        <div id="moving-text">
+            <p>Te amo</p>
+        </div>
+        <button id="btn-quieres" class="red-button" onclick="goToSecondPage()">¿Quieres?</button>
     </div>
 
     <!-- Página 2: Carta -->
@@ -31,7 +35,7 @@
         <button class="red-button" onclick="goToFoodPage()">¿Quieres?</button>
     </div>
 
-    <!-- Página 3: Opciones de Comida -->
+    <!-- Página 3: Opciones de comida -->
     <div id="food-options" class="hidden">
         <h2>¡Elige una comida!</h2>
         <div class="food-option" onclick="goToSite('https://www.burgerking.com')">
