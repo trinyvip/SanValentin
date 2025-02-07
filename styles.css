@@ -17,6 +17,7 @@ p.small-text {
     font-size: 18px;
 }
 
+/* Texto moviéndose de izquierda a derecha */
 #moving-text p {
     position: absolute;
     left: -200px;
@@ -37,6 +38,9 @@ p.small-text {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
 }
 
 /* Página 1 */
@@ -47,16 +51,19 @@ p.small-text {
 /* Página 2 */
 #page2 {
     display: none;
+    position: relative;
 }
 
+/* Estilo del sobre y la carta */
 .envelope {
     position: relative;
     display: inline-block;
+    margin-top: 50px;
 }
 
 .heart {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     background: red;
     border-radius: 50%;
     cursor: pointer;
@@ -64,18 +71,11 @@ p.small-text {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    animation: moveHeart 2s infinite;
-}
-
-@keyframes moveHeart {
-    0% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -50%) scale(1.1); }
-    100% { transform: translate(-50%, -50%) scale(1); }
 }
 
 .flap {
     width: 100%;
-    height: 50px;
+    height: 100px;
     background: #f0f0f0;
     position: absolute;
     top: 0;
@@ -85,14 +85,17 @@ p.small-text {
 }
 
 .letter {
-    display: none;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
     padding: 20px;
     background: #fff;
-    border-radius: 5px;
-    margin-top: 30px;
+    border-radius: 10px;
+    display: block;
+    font-size: 18px;
 }
 
-/* Opciones de comida */
+/* Página de comida */
 .food-option img {
     width: 100px;
     margin: 20px;
@@ -105,6 +108,7 @@ p.small-text {
     50% { transform: translateY(-10px); }
 }
 
+/* Quiz de "¿Me amas?" */
 #love-quiz {
     position: absolute;
     bottom: 20px;
@@ -112,7 +116,6 @@ p.small-text {
     transform: translateX(-50%);
 }
 
-/* Opciones de respuesta a "¿Me amas?" */
 #love-quiz button {
     padding: 10px 20px;
     margin: 10px;
@@ -128,4 +131,10 @@ p.small-text {
 
 #love-quiz button:nth-child(2) {
     background-color: #f44336;
-    color
+    color: white;
+}
+
+/* Página oculta */
+.hidden {
+    display: none;
+}
