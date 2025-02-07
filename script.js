@@ -1,4 +1,4 @@
-// Función para mostrar la página 2
+// Función para cambiar a la segunda página
 function goToSecondPage() {
     document.getElementById("page1").style.display = "none";
     document.getElementById("page2").style.display = "block";
@@ -10,13 +10,13 @@ function openEnvelope() {
     document.querySelector('.letter').style.display = 'block';
 }
 
-// Función para mostrar la página de comida
+// Función para cambiar a la página de comida
 function goToFoodPage() {
     document.getElementById("page2").style.display = "none";
     document.getElementById("food-options").style.display = "block";
 }
 
-// Función para redirigir al sitio de comida
+// Función para redirigir a la tienda
 function goToSite(url) {
     window.location.href = url;
 }
@@ -29,4 +29,10 @@ function loveQuiz(answer) {
     } else {
         alert('¡Piensatelo bien! 😢');
     }
+}
+
+// Función para mover el texto de "Te amo"
+window.onload = function() {
+    const movingText = document.getElementById('moving-text');
+    movingText.style.animation = 'moveText 10s linear infinite';
 }
