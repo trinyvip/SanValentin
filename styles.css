@@ -36,26 +36,34 @@ h1 {
     100% { transform: translateY(0); }
 }
 
-.message {
-    font-size: 20px;
-    margin-top: 20px;
+/* Ocultar la página de mensaje y la de comida al principio */
+#message-page, #food-options {
     display: none;
-    font-style: italic; /* Letras en cursiva */
 }
 
+/* Mostrar la página de mensaje cuando se haga clic en el corazón */
 .message.show {
     display: block;
 }
 
-.character {
-    width: 150px;
+/* Mostrar la página de opciones de comida cuando se haga clic en el cuadro rojo */
+.food-container.show {
+    display: block;
+}
+
+/* Cuadro rojo */
+.red-box {
+    background-color: red;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
     cursor: pointer;
-    margin-top: 30px;
+    margin-top: 20px;
+    border-radius: 5px;
 }
 
 .food-container {
     margin-top: 50px;
-    display: none;
     text-align: center;
 }
 
@@ -65,6 +73,3 @@ h1 {
     cursor: pointer;
 }
 
-.food-container.show {
-    display: block;
-}
