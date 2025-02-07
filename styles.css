@@ -1,75 +1,134 @@
-body {
-    background: url('https://wallpapers.com/images/high/love-heart-pictures-g93vlm0se2bifgct.webp') no-repeat center center fixed;
-    background-size: cover;
+/* Fondo crepe */
+.crepe-background {
+    background-color: #f5e6cc;
     font-family: Arial, sans-serif;
-    color: white;
+    color: #333;
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
-h1 {
+h1.cursive {
     font-size: 40px;
-    margin-top: 20%;
-    animation: heartBeat 2s infinite;
-    font-style: italic; /* Letras en cursiva */
+    font-style: italic;
 }
 
-@keyframes heartBeat {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+p.small-text {
+    font-size: 18px;
+}
+
+.image-click img {
+    width: 150px;
+    cursor: pointer;
+}
+
+#page1, #page2, #food-options {
+    display: none; /* Todos estarán ocultos al inicio */
+}
+
+/* Mostrar la primera página */
+#page1 {
+    display: block;
+}
+
+/* Animación de movimiento de texto */
+@keyframes moveText {
+    0% { left: -200px; }
+    100% { left: 100%; }
+}
+
+#page1 p, #page2 p {
+    position: absolute;
+    animation: moveText 15s linear infinite;
+}
+
+/* Carta con sobre */
+.envelope {
+    position: relative;
+    display: inline-block;
 }
 
 .heart {
-    width: 200px;
-    height: 200px;
-    background: url('https://upload.wikimedia.org/wikipedia/commons/2/27/Red_heart.png') no-repeat center;
-    background-size: contain;
-    margin: 0 auto;
-    animation: moveHeart 1s ease-in-out infinite;
+    width: 30px;
+    height: 30px;
+    background: red;
+    border-radius: 50%;
     cursor: pointer;
-    margin-top: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: moveHeart 2s infinite;
 }
 
 @keyframes moveHeart {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0); }
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.1); }
+    100% { transform: translate(-50%, -50%) scale(1); }
 }
 
-/* Ocultar la página de mensaje y la de comida al principio */
-#message-page, #food-options {
+.flap {
+    width: 100%;
+    height: 50px;
+    background: #f0f0f0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px 5px 0 0;
+    transition: transform 1s;
+}
+
+.letter {
     display: none;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    margin-top: 30px;
 }
 
-/* Mostrar la página de mensaje cuando se haga clic en el corazón */
-.message.show {
-    display: block;
-}
-
-/* Mostrar la página de opciones de comida cuando se haga clic en el cuadro rojo */
-.food-container.show {
-    display: block;
-}
-
-/* Cuadro rojo */
-.red-box {
+.red-button {
     background-color: red;
     color: white;
     padding: 15px;
-    font-size: 20px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    margin-top: 20px;
+}
+
+.food-option img {
+    width: 100px;
+    margin: 20px;
+    cursor: pointer;
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+#love-quiz {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Opciones de respuesta a "¿Me amas?" */
+#love-quiz button {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
     border-radius: 5px;
 }
 
-.food-container {
-    margin-top: 50px;
-    text-align: center;
+#love-quiz button:nth-child(1) {
+    background-color: #4caf50;
+    color: white;
 }
 
-.food-container img {
-    width: 150px;
-    margin: 10px;
-    cursor: pointer;
+#love-quiz button:nth-child(2) {
+    background-color: #f44336;
+    color: white;
 }
-
